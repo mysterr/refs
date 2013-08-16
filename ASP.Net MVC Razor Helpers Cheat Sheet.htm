@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://httputility.com/various/razorhelperscheatsheet.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><title>ASP.Net MVC Razor Helpers Cheat Sheet</title>
+  <meta name="description" content="ASP.Net MVC Razor Helpers Cheat Sheet.">
+  <meta name="author" content="Egor Pavlikhin">
+  <style type="text/css" media="print">
+  html, body { font-family: Arial; margin: 0; font-size: 8pt; }
+  .title { color: #000; font-size: 16pt; }
+.left {
+	font-weight: bold;
+	background: #ccc;
+	padding: 0.2em 0.4em 0.2em 0.2em;
+	border-bottom: 1px solid #666;
+}
+.middle {
+	border-bottom: 1px solid #666;
+	padding: 0.2em 0.4em 0.2em 0.2em;
+}
+.right {
+	border-bottom: 1px solid #666;
+	background: #ccc;
+	padding: 0.2em 0.4em 0.2em 0.2em;
+}
+#footer {
+	padding: 1em 0em 1em 0em;
+	border-top: 10px solid #666;
+}
+#footer div { width: 34em; margin: 0 auto; }
+  </style>
+  <style type="text/css" media="screen">
+  html, body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+	font-family: Calibri, Arial;
+	text-shadow: 1px 1px 0px #333;
+	font-size: 11pt;
+	color: #fff;
+  background: #3081F2; /* old browsers */
+background: -moz-linear-gradient(top, #3081F2 0%, #1D5191 100%) fixed; /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3081F2), color-stop(100%,#1D5191)) fixed; /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3081F2', endColorstr='#1D5191',GradientType=0 ) fixed; /* ie */
+	}
+	.title {
+	padding: 0.5em;
+	font-size: 16pt; font-weight: bold; color: #fff; float: left;
+		background: #FF9232; /* old browsers */
+background: -moz-linear-gradient(top, #FF9232 0%, #F26A30 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9232), color-stop(100%,#F26A30)); /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9232', endColorstr='#F26A30',GradientType=0 ); /* ie */
+	border: 5px solid #FFAD32;
+}
+h1 {
+	margin: 0 auto;
+	font-size: 24pt;
+	text-shadow: 1px 2px 2px #333;
+}
+#helpertable {
+}
+
+#helpertable2 {
+}
+.left{
+	border-bottom: 1px solid #82B0ED;
+	padding: 0.3em;
+	font-weight: bold;background: #1D5191;
+	min-width: 23em;
+}
+.middle{
+	padding: 0.3em;
+	border-bottom: 1px solid #82B0ED;
+	
+}
+a { color: #fff; }
+.right{
+	padding: 0.3em;
+	border-bottom: 1px solid #82B0ED;
+	background: #1D5191;
+}
+#footer {
+	padding: 1em 0em 1em 0em;
+	border-top: 10px solid #3081F2;
+	background: #3081F2; /* old browsers */
+background: -moz-linear-gradient(top, #3081F2 0%, #1D5191 100%) fixed; /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3081F2), color-stop(100%,#1D5191)) fixed; /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3081F2', endColorstr='#1D5191',GradientType=0 ) fixed; /* ie */
+}
+#footer div { width: 30em; margin: 0 auto; }
+  </style>
+<style type="text/css"></style><script src="./ASP.Net MVC Razor Helpers Cheat Sheet_files/webfont.js" type="text/javascript" async=""></script><style type="text/css">#lleo_dialog, #lleo_dialog * {
+    margin: 0 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: none 0 !important;
+	position: static !important;
+	vertical-align: baseline !important;
+	font: normal 13px Arial, Helvetica !important;
+	line-height: 15px !important;
+	color: #000 !important;
+	overflow: visible !important;
+	width: auto !important;
+	height: auto !important;
+	float: none !important;
+	visibility: visible !important;
+	text-align: left !important;
+	border-collapse: separate !important;
+	border-spacing: 2px !important;
+}
+
+#lleo_dialog iframe {
+	height: 0 !important;
+	width: 0 !important;
+}
+
+#lleo_dialog {
+    position: absolute !important;
+    background: #fff !important;
+    border: solid 1px #ccc !important;
+    padding: 7px 0 0 !important;
+    left: -999px;
+    top: -999px;
+	/*max-width: 450px !important;*/
+    width: 440px !important;
+    overflow: hidden;
+    display: block !important;
+    z-index: 999999999 !important;
+    opacity: 0 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+	-moz-border-radius: 3px !important;
+	-webkit-border-radius: 3px !important;
+	border-radius: 3px !important;
+}
+#lleo_dialog.lleo_show {
+    opacity: 1 !important;
+    -webkit-transition: opacity 0.3s !important;
+}
+#lleo_dialog input::-webkit-input-placeholder {
+    color: #aaa !important;
+}
+#lleo_dialog .lleo_has_pic #lleo_word {
+	margin-right: 80px !important;
+}
+#lleo_dialog #lleo_translationsCopntainer1 {
+	position: relative !important;
+}
+#lleo_dialog #lleo_translationsCopntainer2 {
+	padding: 7px 0 0 !important;
+	vertical-align: middle !important;
+}
+#lleo_dialog #lleo_word {
+    color: #000 !important;
+    margin: 0 5px 2px 0 !important;
+    /*float: left !important;*/
+}
+#lleo_dialog .lleo_has_sound #lleo_word {
+    margin-left: 17px !important;
+}
+#lleo_dialog #lleo_text {
+    font-weight: bold !important;
+    color: #d56e00 !important;
+    text-decoration: none !important;
+    cursor: default !important;
+}
+#lleo_dialog #lleo_text.lleo_known {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+#lleo_dialog #lleo_closeBtn {
+    position: absolute !important;
+    right: 6px !important;
+    top: 5px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 0 !important;
+    color: #aaa !important;
+    display: block !important;
+    padding: 2px !important;
+	z-index: 9999999999 !important;
+	width: 7px !important;
+	height: 7px !important;
+	padding: 0  !important;
+	margin: 0   !important;
+}
+
+#lleo_dialog #lleo_optionsBtn {
+    position: absolute !important; 
+    right: 1px !important;
+    top: 12px !important;
+    line-height: 1px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    color: #aaa !important;
+    padding: 2px !important;
+	display: none;
+}
+#lleo_dialog #lleo_optionsBtn img{
+	width: 12px !important;
+	height: 12px !important;
+}
+#lleo_dialog #lleo_sound {
+    float: left !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 12px !important;
+    background: 0 0 no-repeat !important;
+    cursor: pointer !important;
+    display: none !important;
+}
+#lleo_dialog .lleo_has_sound #lleo_sound {
+    display: block !important;
+}
+#lleo_dialog #lleo_picOuter {
+    position: absolute !important;
+    float: right !important;
+    right: 29px;
+    top: 0;
+    display: none !important;
+    z-index: 9 !important;
+}
+#lleo_dialog .lleo_has_pic #lleo_picOuter {
+    display: block !important;
+}
+#lleo_dialog #lleo_picOuter:hover {
+    z-index: 11 !important;
+}
+#lleo_dialog #lleo_pic,
+#lleo_dialog #lleo_picBig {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    border: solid 2px #fff !important;
+    -moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+    z-index: 1 !important;
+}
+#lleo_dialog #lleo_pic {
+	position: relative !important;
+    border: none !important;
+	width: 34px !important;
+}
+#lleo_dialog #lleo_picBig {
+    box-shadow: -1px 2px 4px rgba(0,0,0,0.3);
+    z-index: 2 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+#lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+    visibility: visible !important;
+    opacity: 1 !important;
+    -webkit-transition: opacity 0.3s !important;
+    -webkit-transition-delay: 0.3s !important;
+}
+#lleo_dialog #lleo_transcription {
+    color: #486D85 !important;
+    margin: 0 0 4px 29px !important;
+    color: #aaaaaa !important;
+}
+#lleo_dialog .lleo_no_trans {
+    color: #aaa !important;
+}
+
+
+
+
+
+
+#lleo_dialog .ll-translation-counter {
+	float: right !important;
+    font-size: 11px !important;
+    color: #aaa !important;
+    padding: 2px 2px 1px 10px !important;
+}
+
+#lleo_dialog .ll-translation-text {
+	float: left !important;
+	width: 80% !important;
+}
+
+#lleo_dialog #lleo_trans a {
+    color: #3F669F !important;
+    padding: 1px 4px !important;
+    text-decoration: none !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+}
+
+#lleo_dialog .ll-translation-item {
+	width: 100% !important;
+	float: left !important; 
+	padding:1px 4px;
+	color: #3F669F !important;
+	padding: 3px !important;
+	border: solid 1px white !important;
+	-moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+}
+
+#lleo_dialog .ll-translation-item:hover {
+	border: solid 1px #9FC2C9 !important;
+    background: #EDF4F6 !important;
+	cursor: pointer !important;
+}
+
+#lleo_dialog .ll-translation-marker {
+	margin: 0px 5px 2px 2px !important;
+}
+
+
+
+
+
+#lleo_dialog #lleo_icons {
+    margin: 10px 0 7px !important;
+    color: #aaa !important;
+    line-height: 20px !important;
+    font-size: 11px !important;
+    clear: both !important;
+    padding-left: 16px !important;
+}
+#lleo_icons a {
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 0 -2px 3px !important;
+    text-decoration: none !important;
+    background: 0 0 no-repeat !important;
+    opacity: 0.5 !important;
+}
+#lleo_icons a:hover {
+    opacity: 1 !important;
+}
+#lleo_icons a.lleo_google     {background-position:-34px 0 !important;}
+#lleo_icons a.lleo_multitran  {background-position:-64px 0 !important;}
+#lleo_icons a.lleo_lingvo     {background-position:-51px 0 !important; width: 12px !important;}
+#lleo_icons a.lleo_dict       {background-position:-17px 0 !important;}
+#lleo_icons a.lleo_linguee    {background-position:-81px 0 !important;}
+#lleo_icons a.lleo_michaelis  {background-position:-98px 0 !important;}
+
+
+
+
+#lleo_dialog #lleo_contextContainer {
+    margin: 0 !important;
+    padding: 3px 15px 3px 10px !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+    border-bottom: solid 1px #ddd !important;
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
+    display: none !important;
+    overflow: hidden !important;
+}
+#lleo_dialog .lleo_has_context #lleo_contextContainer {
+    display: block !important;
+}
+#lleo_dialog #lleo_context {
+    color: #444 !important;
+    text-shadow: 1px 1px 0 #f4f4f4 !important;
+    line-height: 12px !important;
+    font-size: 11px !important;
+    margin-left: 2px !important;
+}
+#lleo_dialog #lleo_context b {
+    line-height: 12px !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    font-size: 11px !important;
+}
+#lleo_dialog #lleo_gBrand {
+    color: #aaa !important;
+    font-size: 10px !important;
+    /*padding-right: 52px !important;*/
+    padding-bottom: 14px !important;
+    margin: -3px 4px 0 4px !important;
+    background: left bottom no-repeat !important;
+    display: inline-block !important;
+    float: right !important;
+}
+#lleo_dialog #lleo_gBrand.hidden {
+    display: none !important;
+}
+#lleo_dialog #lleo_translateContextLink {
+    color: #444 !important;
+    text-shadow: 1px 1px 0 #f4f4f4 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+    border: solid 1px !important;
+    box-shadow: 1px 1px 0 #f6f6f6 !important;
+    border-color: #999 #aaa #aaa #999 !important;
+    -moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+    padding: 0 3px !important;
+    font-size: 11px !important;
+    text-decoration: none !important;
+    margin: 1px 5px 0 !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+#lleo_dialog #lleo_translateContextLink:hover {
+    background: #f8f8f8 !important;
+}
+
+#lleo_dialog #lleo_setTransForm {
+    display: block !important;
+    margin-top: 3px !important;
+    padding-top: 5px !important;
+    /* Set position and background because the form might be overlapped by an image when no translations */
+    position: relative !important;
+    background: #fff !important;
+    z-index: 10 !important;
+    padding-bottom: 10px !important;
+    padding-left: 16px !important;
+}
+#lleo_dialog .lleo-custom-translation {
+    padding: 4px 5px !important;
+    border: solid 1px #ddd !important;
+    -moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+    width: 90% !important;
+    min-width: 270px !important;
+    background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+	font: normal 13px Arial, Helvetica !important;
+	line-height: 15px !important;
+}
+#lleo_dialog .lleo-custom-translation:hover {
+    border: solid 1px #aaa !important;
+}
+#lleo_dialog .lleo-custom-translation:focus {
+    background: #FFFEC9 !important;
+}
+
+#lleo_dialog *.hidden {
+    display: none !important;
+}
+
+#lleo_dialog .infinitive{
+    color: #D56E00 !important;
+    text-decoration: none;
+    border-bottom: 1px dotted #D56E00 !important;
+}
+#lleo_dialog .infinitive:hover{
+    border: none !important;
+}
+
+
+#lleo_dialog #lleo_trans{
+    zoom: 1;
+    border-top: 1px solid #eeeeee !important;
+    margin: 10px 0 0 !important;
+    padding: 5px 30px 0 14px !important;
+}
+
+#lleo_dialog .lleo_clearfix {
+	display: block !important;
+	clear: both !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	font-size: 0 !important;
+}
+
+#lleo_dialog #lleo_markBlock {
+    background: #eeeeee !important;
+	cursor: pointer !important; 
+	border-bottom-left-radius: 3px !important;
+	border-bottom-right-radius: 3px !important;
+	border-collapse: separate !important;
+	border-spacing: 2px !important; 
+}
+
+#lleo_dialog #lleo_markBlock img{
+	width: 14px !important;
+	height: 14px !important;
+}
+
+#lleo_dialog #lleo_markBlock .icon-cell {
+	padding: 5px 2px 5px 16px !important;
+	height: 17px !important;
+}
+
+#lleo_dialog #lleo_markBlock .wide-cell {
+	width: 100% !important;
+}
+
+#lleo_dialog #lleo_markBlock .text-cell {
+	color: #999999 !important; 
+    font: normal 13px Arial, Helvetica !important;
+    text-shadow: 0 1px #fff !important; 
+}
+
+#lleo_dialog #lleo_markBlock td {
+	vertical-align: middle !important;
+	border-collapse: separate !important;
+	border-spacing: 2px !important;
+}
+
+
+#lleo_dialog #lleo_picOuter table{
+    width: 44px !important;
+    position: absolute !important;
+    right: 0 !important;
+    vertical-align: middle !important;
+}
+
+#lleo_dialog #lleo_picOuter td{
+    width: 38px !important;
+    height: 38px !important;
+    border: 1px solid #eeeeee !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+#lleo_dialog #lleo_picOuter td div {
+	height: 38px !important;
+	overflow: hidden !important;
+}</style><style type="text/css">
+.ll-content-notification *{
+	letter-spacing: normal !important;
+	margin: 0 !important;
+    padding: 0 !important;
+	background: none !important;
+	border: 0 !important;
+	float: none !important;
+	text-align: left !important;
+	text-decoration: none !important;
+    font: normal 15px 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Arial, Helvetica, sans-serif !important;
+}
+
+
+.ll-content-notification {
+    vertical-align: baseline !important;
+    color: #000 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    background: #fff !important;
+    border: solid 1px #AAA !important;
+	/*
+    left: -999px;
+    top: -999px;
+	*/
+    width: auto;
+    /* width: 300px !important; */
+    display: block;
+    z-index: 999999999 !important;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+    /* opacity: 0 !important; */
+    transition: opacity 0.8s !important;
+    -moz-transition: opacity 0.8s !important; /* Firefox 4 */
+    -webkit-transition: opacity 0.8s !important; /* Safari and Chrome */
+    -o-transition: opacity 0.8s !important; /* Opera */
+    cursor: default !important;
+}
+
+.ll-content-notification-shown {
+    opacity: 1 !important;
+    transition: opacity 0.8s !important;
+    -moz-transition: opacity 0.8s !important; /* Firefox 4 */
+    -webkit-transition: opacity 0.8s !important; /* Safari and Chrome */
+    -o-transition: opacity 0.8s !important; /* Opera */
+}
+
+.ll-content-notification-header {
+	border: 0 !important;
+	margin: 0 !important;
+    background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAABCAIAAABsYngUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAABJJREFUGFdjePHmCxw9e/UZjgAVYhYtk8xZqAAAAABJRU5ErkJggg==) !important;
+    border-bottom: solid 1px #CCC !important;
+    padding: 1px 4px !important;
+	min-height: 18px !important;
+	width: 100% !important;
+	-webkit-border-top-left-radius: 3px !important;
+    -webkit-border-top-right-radius: 3px !important;
+    -moz-border-radius-topleft: 3px !important;
+    -moz-border-radius-topright: 3px !important;
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
+	border-collapse: collapse !important;
+	border-spacing: 0 !important;
+}
+
+.ll-content-notification-header-pic {
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 3px 0 0 3px !important;
+	width: 20px !important;
+	vertical-align: top !important;
+	line-height: 1px !important;
+}
+
+.ll-content-notification-header-pic img{
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	line-height: 1px !important;
+}
+
+
+.ll-content-notification-header-caption {
+    font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Arial, Helvetica, sans-serif !important;
+	font-weight: bold !important;
+    line-height: 15px !important;
+    color: #555 !important;
+    float: left !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+	white-space: normal !important;
+	padding: 3px !important;
+	margin: 0 !important;
+}
+
+.ll-content-notification-header-close {
+    width: 15px !important;
+	vertical-align: top !important;
+	text-align: right !important;
+	padding: 6px 5px 0 0 !important;
+	margin: 0 !important;
+	line-height: 1px !important;
+}
+
+.ll-content-notification-header-close img {
+	border: 0 !important;
+    width: 7px !important;
+    height: 7px !important;
+    margin: 0 !important;
+	padding: 0 !important;
+}
+
+.ll-content-notification-content {
+    margin: 0 !important;
+    padding: 8px !important;
+    float: left !important;
+    overflow: hidden !important;
+    width: auto !important;
+}
+
+.ll-content-notification-content-logo {
+    float: left !important;
+	height: 48px !important;
+	width: 48px !important;
+}
+
+.ll-content-notification-content-main {
+    margin-left: 60px !important;
+    overflow: hidden !important;
+    padding: 0 0 2px 0 !important;
+    color: #333 !important;
+    text-align: left !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+    font: normal 13px 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Arial, Helvetica, sans-serif !important;
+    line-height: 15px !important;
+    width: auto !important;
+}
+
+.ll-content-notification-content-header {
+	text-align: left !important;
+	text-decoration: none !important;
+    font: bold 15px 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Arial, Helvetica, sans-serif !important;
+    line-height: 19px !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: #333 !important;
+    text-shadow: none !important;
+    letter-spacing: normal !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.ll-content-notification-word {
+    color: #d56e00 !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+</style></head>
+<body>
+<div style="width: 40em; margin: 0 auto; text-align: center;">
+<h1>ASP .Net MVC Razor Helpers Cheat Sheet</h1>
+</div>
+<div id="helpertable">
+	<div class="title">HtmlHelper</div>
+	<table cellpadding="0" cellspacing="0" style="clear: left; width: 100%;">
+	<tbody><tr><td class="left"><b>Method</b></td><td class="middle"><b>Action</b></td><td class="right"><b>Output</b></td></tr>
+	<tr><td class="left">ActionLink(s:text, s:action, o:attributes)</td><td class="middle">Writes an anchor tag to a link for a specific action.</td><td class="right">&lt;a href="action"&gt;text&lt;/a&gt;</td></tr>
+	<tr><td class="left">AntiForgeryToken(s:salt, s:domain, s:path)</td><td class="middle">Generates a hidden form field (anti-forgery token) that is validated when the form is submitted.</td><td class="right"></td></tr>
+	<tr><td class="left">AttributeEncode(s: input)</td><td class="middle">HTML-encodes the string (as an attribute).</td><td class="right"></td></tr>
+	<tr><td class="left">BeginForm(s:action, s:controller, o:values)</td><td class="middle">Writes an opening &lt;form&gt; tag to the response.</td><td class="right">&lt;form action="/controller/action/"&gt;</td></tr>
+	<tr><td class="left">BeginRouteForm(s:routeName)</td><td class="middle">Writes an opening &lt;form&gt; tag for the route.</td><td class="right">&lt;form action="route"&gt;</td></tr>
+	<tr><td class="left">CheckBox(s:name, b:checked)</td><td class="middle">Returns a check box input element.</td><td class="right">&lt;input type="checkbox" name="name" id="name" checked="checked" /&gt;</td></tr>
+	<tr><td class="left">CheckBoxFor(e:expression)</td><td class="middle">Returns a check box input element for the model.</td><td class="right">&lt;input type="checkbox" name="name" id="name" checked="checked" /&gt;</td></tr>
+	<tr><td class="left">DropDownList(s:name, list:selectlistitems)</td><td class="middle">Returns a single-selection select element.</td><td class="right">&lt;select name="name" id="name"&gt;&lt;/select&gt;</td></tr>
+	<tr><td class="left">DropDownListFor(e:expression, list:selectlistitems)</td><td class="middle">Returns a single-selection select element for the model.</td><td class="right">&lt;select name="name" id="name"&gt;&lt;/select&gt;</td></tr>
+	<tr><td class="left">Encode(s:input)</td><td class="middle">HTML-encodes the string.</td><td class="right"></td></tr>
+	<tr><td class="left">EndForm()</td><td class="middle">Renders the closing &lt;/form&gt; tag to the response.</td><td class="right">&lt;/form&gt;</td></tr>
+	<tr><td class="left">Hidden(s:name, o:value)</td><td class="middle">Returns a hidden input element.</td><td class="right">&lt;input type="hidden" value="value" name="name" /&gt;</td></tr>
+	<tr><td class="left">HiddenFor(e:expression)</td><td class="middle">Returns a hidden input element for the model.</td><td class="right">&lt;input type="hidden" value="value" name="name" /&gt;</td></tr>
+	<tr><td class="left">ListBox(s:name, list:selectlistitems)</td><td class="middle">Returns a multi-select select element.</td><td class="right">&lt;select multiple="multiple" name="name" id="name"&gt;&lt;/select&gt;</td></tr>
+	<tr><td class="left">ListBoxFor(e:expression, list:selectlistitems)</td><td class="middle">Returns a multi-select select element for the model.</td><td class="right">&lt;select multiple="multiple" name="name" id="name"&gt;&lt;/select&gt;</td></tr>
+	<tr><td class="left">Password(s:name, o:value)</td><td class="middle">Returns a password input element.</td><td class="right">&lt;input type="password" value="value" name="name" /&gt;</td></tr>
+	<tr><td class="left">PasswordFor(e:expression)</td><td class="middle">Returns a password input element for the model.</td><td class="right">&lt;input type="password" value="value" name="name" /&gt;</td></tr>
+	<tr><td class="left">RadioButton(s:name, o:value, b:checked)</td><td class="middle">Returns a radio button input element.</td><td class="right">&lt;input type="radio" value="value" name="name" checked="checked" /&gt;</td></tr>
+	<tr><td class="left">RadioButtonFor(e:expression, o:value)</td><td class="middle">Returns a radio button input element for the model.</td><td class="right">&lt;input type="radio" value="value" name="name" checked="checked" /&gt;</td></tr>
+	<tr><td class="left">Partial(s:name, o:model)</td><td class="middle">Renders a partial view (.cshtml).</td><td class="right"></td></tr>
+	<tr><td class="left">RouteLink(s:text, s:routeName)</td><td class="middle">Returns an anchor element (a element) that contains the virtual path of the specified action.</td><td class="right">&lt;a href="action"&gt;text&lt;/a&gt;</td></tr>
+	<tr><td class="left">TextArea(s:name, s:value)</td><td class="middle">Returns the specified textarea element.</td><td class="right">&lt;textarea name="name"&gt;value&lt;/textarea&gt;</td></tr>
+	<tr><td class="left">TextAreaFor(e:expression)</td><td class="middle">Returns the specified textarea element for the model.</td><td class="right">&lt;textarea name="name"&gt;value&lt;/textarea&gt;</td></tr>
+	<tr><td class="left">TextBox(s:name, o:value)</td><td class="middle">Returns a text input element.</td><td class="right">&lt;input type="text" name="name" value="value" /&gt;</td></tr>
+	<tr><td class="left">TextBoxFor(e:expression)</td><td class="middle">Returns a text input element for the model.</td><td class="right">&lt;input type="text" name="name" value="value" /&gt;</td></tr>
+	<tr><td class="left">TextBoxFor(e:expression)</td><td class="middle">Returns a text input element for the model.</td><td class="right">&lt;input type="text" name="name" value="value" /&gt;</td></tr>
+	</tbody></table>
+</div>
+
+<div id="helpertable2">
+	<div class="title">UrlHelper</div>
+	<table cellpadding="0" cellspacing="0" style="clear: left; width: 100%;">
+	<tbody><tr><td class="left"><b>Method</b></td><td class="middle"><b>Action</b></td><td class="right"><b>Output</b></td></tr>
+	<tr><td class="left">Action(s:action, s:controller)</td><td class="middle">Generates a fully qualified URL to an action method.</td><td class="right"></td></tr>
+	<tr><td class="left">Content(s:path)</td><td class="middle">Converts a virtual (relative) path to an application absolute path.</td><td class="right"></td></tr>
+	<tr><td class="left">Encode(s:url)</td><td class="middle">Encodes special characters in a URL string into character-entity equivalents.</td><td class="right"></td></tr>
+	<tr><td class="left">RouteUrl(s:route)</td><td class="middle">Generates a fully qualified URL for the specified route name.</td><td class="right"></td></tr>
+	</tbody></table>
+</div>
+
+<div id="footer">
+	<div><img src="http://pabros.com.au/logo.png" style="float: left; margin-right: 2em;">Prepared by <a href="http://httputility.com/">Egor Pavlikhin</a> (<a href="http://pabros.com.au/">pabros.com.au</a>)</div>
+</div>
+
+</body></html>
